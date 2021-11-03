@@ -1,0 +1,25 @@
+{
+  "name": "daodapp",
+  "version": "1.0.0",
+  "description": "A  dapp used in IADD",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack --mode production",
+    "test": "yarn lint",
+    "prepare": "yarn test && yarn build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist/"
+  ],
+  "devDependencies": {
+    "copy-webpack-plugin": "^6.0.2",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.0"
+  },
+  "dependencies": {
+    "clean-webpack-plugin": "^4.0.0"
+  }
+}
