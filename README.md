@@ -2,7 +2,15 @@
 
 # daoDapp0.3
 DAO的管理及币值兑换的应用程序 。本程序需要 数据库和 java 后台服务支持。  data.sql mysql 数据库脚本, java_server.rar java后台服务。
+- [demo](http://124.71.78.126:8082/)
 
+# 版本升级日记
+- IADD 兑换接口增加 接收地址参数;
+- 增加IADD兑换事件;
+- 增加 eth 直接 兑换 token 接口;
+- 对svg图片进行压缩处理后;
+- 纠正 “授权”重复显示 及兑换比率计算误差的bug
+- 
 ## src/components 组件
 - CreateDao.js : Dao 的管理，包括注册、创建OS、发行token 及logo的更改。
 - daoConnect.js : 连接钱包及接口的初始化
@@ -18,7 +26,7 @@ DAO的管理及币值兑换的应用程序 。本程序需要 数据库和 java 
 - commulate.js : 获取最小兑换量接口
 - ERC20s.js ： 发行token 接口
 - IADD.js ： utoken 和 token, token 和 token 间的相互兑换
-- logo.js ： logo 更改接口
+- BytesLogos.js ： logo 上传接口
 - register.js ：dao注册、创建os 接口
 - utoken.js ：eth 兑换 utoken 接口
 - 
@@ -96,18 +104,20 @@ const _daoConnect=new DaoConnect(
  * @param {*} _mintoken :  最小兑换量 通过commulate 接口获取
  * @param {*} _token :  兑换量 (单位：wei)
  * @param {*} _id : token ID
+ * @param {*} _address : 接收地址
  * @returns 
  */
- async NDAOToToken(_mintoken,_token,_id) 
+ async NDAOToToken(_mintoken,_token,_id,_address) 
 
 //token 兑换成 utoken
 /*
  * @param {*} _mintoken :  最小兑换量 通过commulate 接口获取
  * @param {*} _token :  兑换量 (单位：wei)
  * @param {*} _id : token ID
+ * @param {*} _address : 接收地址
  * @returns 
  */
-async TokenToNDAO(_mintoken,_token,_id) 
+async TokenToNDAO(_mintoken,_token,_id,_address) 
 
 //token 兑换 token 
 /*
@@ -116,9 +126,10 @@ async TokenToNDAO(_mintoken,_token,_id)
  * @param {*} _token1 : 兑换量 (单位：wei)
  * @param {*} _id1 : token1 ID
  * @param {*} _id2 : token1 ID
+ * @param {*} _address : 接收地址
  * @returns 
  */
-async TokenToToken(_mintoken1,_mintoken2,_token,_id1,_id2) {
+async TokenToToken(_mintoken1,_mintoken2,_token,_id1,_id2,_address) {
 }
 
 ```
