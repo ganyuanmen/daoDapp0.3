@@ -10,7 +10,7 @@ DAO的管理及币值兑换的应用程序 。本程序需要 数据库和 java 
 - 增加 eth 直接 兑换 token 接口;
 - 对svg图片进行压缩处理后;
 - 纠正 “授权”重复显示 及兑换比率计算误差的bug
-- 
+- logo 图片增加 zip, jpg, svg,png,gif,webp 类型的图片，其中zip 是 jpg, svg,png,gif,webp 的压缩文件
 ## src/components 组件
 - CreateDao.js : Dao 的管理，包括注册、创建OS、发行token 及logo的更改。
 - daoConnect.js : 连接钱包及接口的初始化
